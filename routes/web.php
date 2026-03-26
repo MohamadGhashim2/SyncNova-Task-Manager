@@ -44,6 +44,11 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
+Route::get('lang/{locale}', function ($locale) {
+    if (in_array($locale, ['en', 'ar', 'tr'])) {
+        session()->put('locale', $locale);
+    }
+    return redirect()->back();
+})->name('lang.switch');
 // هذا السطر السحري الذي يجلب كل مسارات تسجيل الدخول والخروج!
 require __DIR__.'/auth.php';
