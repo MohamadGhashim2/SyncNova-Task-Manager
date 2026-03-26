@@ -27,8 +27,9 @@ Route::get('/tasks', [TaskController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('tasks.index');
 Route::get('/tasks/create', [TaskController::class, 'create'])->middleware(['auth', 'verified'])->name('tasks.create');
-// مسار لتغيير حالة المهمة إلى "مكتملة"
-Route::patch('/tasks/{task}/complete', [TaskController::class, 'complete'])->middleware(['auth', 'verified'])->name('tasks.complete');
+
+// مسار لتغيير حالة المهمة (نقلها بين الأعمدة)
+Route::patch('/tasks/{task}/status', [TaskController::class, 'updateStatus'])->middleware(['auth', 'verified'])->name('tasks.updateStatus');
 // مسار لفتح صفحة التعديل
 Route::get('/tasks/{task}/edit', [TaskController::class, 'edit'])->middleware(['auth', 'verified'])->name('tasks.edit');
 

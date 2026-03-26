@@ -2,14 +2,18 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Task extends Model
 {
-    // الحقول المسموح بتعبئتها
-    protected $fillable = ['title', 'description', 'status', 'user_id'];
+    use HasFactory;
 
-    // علاقة: كل مهمة تنتمي لمستخدم واحد
+    protected $fillable = ['title', 'description', 'status', 'user_id', 'priority', 'due_date'];
+    protected $casts = [
+        'due_date' => 'date',
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);
