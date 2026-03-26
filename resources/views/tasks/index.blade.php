@@ -450,7 +450,6 @@
                     fallbackTolerance: 0,
                     swapThreshold: 0.6,
 
-                    // هذا الحدث هو السر لإصلاح المشكلة، نمنع Alpine من إخفاء النسخة
                     onClone: function (evt) {
                         if (evt.clone) {
                             evt.clone.removeAttribute('x-show');
@@ -490,7 +489,6 @@
                                     itemEl.classList.add('opacity-75');
                                     if (badgeEl) badgeEl.classList.add('opacity-50');
 
-                                    // تلوين التاريخ بالرمادي عند الانتهاء
                                     if(dateDiv) {
                                         dateDiv.classList.remove('text-red-500', 'dark:text-red-400', 'text-yellow-600', 'dark:text-yellow-500');
                                         dateDiv.classList.add('text-gray-500', 'dark:text-gray-400');
@@ -507,7 +505,6 @@
                                     itemEl.classList.remove('opacity-75');
                                     if (badgeEl) badgeEl.classList.remove('opacity-50');
 
-                                    // استعادة لون التاريخ (أحمر إذا متأخرة، أو أصفر لليوم)
                                     if(dateDiv) {
                                         const overdueSpan = dateDiv.querySelector('span.mx-1');
                                         if(overdueSpan && overdueSpan.innerText.includes('متأخرة')){

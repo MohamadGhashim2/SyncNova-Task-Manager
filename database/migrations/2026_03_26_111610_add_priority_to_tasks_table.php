@@ -9,7 +9,6 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('tasks', function (Blueprint $table) {
-            // إضافة عمود الأولوية مع تحديد القيم المسموحة (عادي، متوسط، عاجل)
             $table->enum('priority', ['low', 'medium', 'high'])->default('low')->after('description');
         });
     }

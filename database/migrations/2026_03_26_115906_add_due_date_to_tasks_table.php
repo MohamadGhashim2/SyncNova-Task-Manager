@@ -9,7 +9,6 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('tasks', function (Blueprint $table) {
-            // إضافة عمود التاريخ (يسمح بأن يكون فارغاً nullable)
             $table->date('due_date')->nullable()->after('priority');
         });
     }

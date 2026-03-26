@@ -25,14 +25,14 @@ class TaskController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
             'priority' => 'required|in:low,medium,high',
-            'due_date' => 'nullable|date', // 🌟 التحقق من التاريخ
+            'due_date' => 'nullable|date',  
         ]);
 
         Task::create([
             'title' => $request->title,
             'description' => $request->description,
             'priority' => $request->priority,
-            'due_date' => $request->due_date, // 🌟 حفظ التاريخ
+            'due_date' => $request->due_date, 
             'user_id' => Auth::id(),
             'status' => 'pending', 
         ]);
@@ -71,14 +71,14 @@ class TaskController extends Controller
                 'title' => 'required|string|max:255',
                 'description' => 'nullable|string',
                 'priority' => 'required|in:low,medium,high',
-                'due_date' => 'nullable|date', // 🌟 التحقق من التاريخ
+                'due_date' => 'nullable|date', 
             ]);
 
             $task->update([
                 'title' => $request->title,
                 'description' => $request->description,
                 'priority' => $request->priority,
-                'due_date' => $request->due_date, // 🌟 تحديث التاريخ
+                'due_date' => $request->due_date, 
             ]);
         }
         return redirect()->route('tasks.index')->with('success', 'تم تحديث المهمة بنجاح ✏️');
