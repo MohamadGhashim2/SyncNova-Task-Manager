@@ -1,59 +1,77 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# SyncNova - Smart Task Management System 🚀
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Alpine.js](https://img.shields.io/badge/Alpine.js-2D3441?style=for-the-badge&logo=alpine.js&logoColor=white)
 
-## About Laravel
+**SyncNova** is a modern, Kanban-based task management application designed for speed, efficiency, and a seamless user experience. Built with Laravel, it features a highly interactive UI without the need for a heavy frontend framework.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+**SyncNova (سينك نوفا)** هو نظام حديث لإدارة المهام يعتمد على لوحات "كانبان"، مصمم ليوفر سرعة وكفاءة وتجربة مستخدم سلسة. تم بناؤه باستخدام لارافيل، ويتميز بواجهة تفاعلية ذكية.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## ✨ Features | الميزات الأساسية
 
-## Learning Laravel
+- 📋 **Interactive Kanban Board:** Drag and drop tasks smoothly between columns (Pending, In Progress, Completed).
+- 🌙 **Smart Dark Mode:** Fully integrated dark/light theme that respects user OS preferences and saves locally.
+- 🔍 **Live Search:** Filter tasks instantly by title or description without page reloads.
+- 🏷️ **Task Priorities:** Categorize tasks by priority (High 🔴, Medium 🟡, Low 🔵).
+- ⏰ **Due Dates & Deadlines:** Set deadlines for tasks with smart indicators for overdue and remaining days.
+- 🔔 **Toast Notifications:** Elegant, non-intrusive floating alerts for user actions using Alpine.js.
+- ⚡ **No Page Reloads:** Fast state updates using Fetch API and Alpine.js for a SPA-like feel.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🛠️ Tech Stack | التقنيات المستخدمة
 
-## Laravel Sponsors
+- **Backend:** Laravel (PHP)
+- **Frontend:** Blade, Tailwind CSS, Alpine.js
+- **Database:** MySQL / SQLite
+- **Libraries:** Sortable.js (for Drag & Drop)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+---
 
-### Premium Partners
+## 🚀 Installation & Setup | طريقة التشغيل
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+Follow these steps to run the project locally on your machine:
 
-## Contributing
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/YourUsername/SyncNova.git](https://github.com/YourUsername/SyncNova.git)
+   cd SyncNova
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+2. Install PHP dependencies:
+    ```bash
+    composer install
 
-## Code of Conduct
+3. Install NPM dependencies and compile assets:
+    ```bash
+    npm install
+    npm run build
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+4. Set up environment variables:
+    ```bash
+    cp .env.example .env
+    php artisan key:generate
 
-## Security Vulnerabilities
+5. Configure your database in .env and run migrations:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+    ```bash
+    php artisan migrate
 
-## License
+6. Start the local development server:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+    ```bash
+    php artisan serve
+
+
+Visit http://localhost:8000 in your browser and start managing your tasks! 🎉
+
+
+👨‍💻 Developer | المطور
+Developed with ❤️ by mohamad Ghashim
+
+
+### لمسة أخيرة قبل الحفظ:
+في السطر الخاص بـ `git clone` داخل الكود أعلاه، لا تنسَ تبديل `YourUsername` باسم حسابك الحقيقي على GitHub لكي يعمل الرابط بشكل صحيح.
+
