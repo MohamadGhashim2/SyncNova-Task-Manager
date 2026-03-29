@@ -69,12 +69,6 @@
                         class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-bold transition">
                         {{ __('messages.login') }}
                     </a>
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}"
-                            class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg font-bold transition shadow-md">
-                            {{ __('messages.register') }}
-                        </a>
-                    @endif
                 @endauth
             @endif
         </div>
