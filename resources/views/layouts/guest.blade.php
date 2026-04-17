@@ -32,6 +32,12 @@
                 </a>
             </div>
 
+            @isset($beforePanel)
+                <div class="w-full sm:max-w-md mt-6 px-6">
+                    {{ $beforePanel }}
+                </div>
+            @endisset
+
             <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg transition-colors duration-300 border-t-4 border-blue-500">
                 {{ $slot }}
             </div>

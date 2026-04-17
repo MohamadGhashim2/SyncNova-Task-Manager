@@ -1,4 +1,14 @@
 <x-guest-layout>
+    <x-slot name="beforePanel">
+        <div class="rounded-lg border border-blue-200 bg-blue-50 px-4 py-3 text-sm text-blue-900 shadow-sm dark:border-blue-700 dark:bg-blue-950/40 dark:text-blue-100">
+            <p class="font-semibold">{{ __('Demo account') }}</p>
+            <div class="mt-2 grid gap-1">
+                <p><span class="font-semibold">{{ __('messages.email') }}:</span> demo@demo.com</p>
+                <p><span class="font-semibold">{{ __('messages.current_password') }}:</span> Demo.1234</p>
+            </div>
+        </div>
+    </x-slot>
+
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
     <form method="POST" action="{{ route('login') }}">
